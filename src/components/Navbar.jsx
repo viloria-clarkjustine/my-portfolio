@@ -1,47 +1,169 @@
+import { useState } from "react";
 import logo from "../assets/pattern_square.png";
 
 export default function Navbar() {
+  const [copied, setCopied] = useState(false);
+  const email = "viloria.clarkj@gmail.com";
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy email:", err);
+    }
+  };
+
   return (
-    <nav className="flex items-center justify-center border border-red-500 p-2">
+    <nav className="flex items-center justify-center gap-3 border border-red-500 p-2">
+      {/* 1. Logo Container (Left) */}
+      <div className="flex items-center justify-center border border-red-500 p-2 rounded-full">
+        <a
+          href="#home"
+          aria-label="Home"
+          title="Home"
+          className="flex items-center justify-center w-10 h-10 border border-red-500 rounded-full"
+        >
+          <img
+            src={logo}
+            alt="Site Logo"
+            className="w-6 h-6 object-contain"
+          />
+        </a>
+      </div>
+
+      {/* 2. Navigation Container (Center - Icons) */}
       <ul className="flex items-center gap-4 border border-red-500 p-2 rounded-full">
         <li>
           <a
-            href="#home"
-            aria-label="Home"
-            className="flex items-center justify-center w-10 h-10 border border-red-500 rounded-full"
-          >
-            <img
-              src={logo}
-              alt="Site Logo"
-              className="w-6 h-6 object-contain"
-            />
-          </a>
-        </li>
-        <li>
-          <a
             href="#skills"
-            className="inline-flex items-center justify-center border border-red-500 px-4 py-2 rounded-full"
+            aria-label="Skills"
+            title="Skills"
+            className="inline-flex items-center justify-center w-10 h-10 border border-red-500 rounded-full"
           >
-            Skills
+            {/* Skills / Code & Terminal Icon */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
           </a>
         </li>
         <li>
           <a
             href="#experience"
-            className="inline-flex items-center justify-center border border-red-500 px-4 py-2 rounded-full"
+            aria-label="Experience"
+            title="Experience"
+            className="inline-flex items-center justify-center w-10 h-10 border border-red-500 rounded-full"
           >
-            Experience
+            {/* Experience / Briefcase Icon */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+            </svg>
           </a>
         </li>
         <li>
           <a
             href="#socials"
-            className="inline-flex items-center justify-center border border-red-500 px-4 py-2 rounded-full"
+            aria-label="Socials"
+            title="Socials"
+            className="inline-flex items-center justify-center w-10 h-10 border border-red-500 rounded-full"
           >
-            Socials
+            {/* Socials / Network Icon */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="18" cy="5" r="3" />
+              <circle cx="6" cy="12" r="3" />
+              <circle cx="18" cy="19" r="3" />
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+            </svg>
           </a>
         </li>
       </ul>
+
+      {/* 3. Quick Access Container (Right) */}
+      <div className="flex items-center gap-3 border border-red-500 p-2 rounded-full">
+        <button
+          type="button"
+          onClick={handleCopyEmail}
+          title="Click to copy email"
+          aria-label="Copy email to clipboard"
+          className="inline-flex items-center gap-2 border border-red-500 px-4 py-2 rounded-full text-sm cursor-pointer"
+        >
+          <span>{copied ? "Copied!" : email}</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-4 h-4"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            {copied ? (
+              <polyline points="20 6 9 17 4 12" />
+            ) : (
+              <>
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+              </>
+            )}
+          </svg>
+        </button>
+        <a
+          href="#resume"
+          aria-label="Resume"
+          title="Resume"
+          className="inline-flex items-center justify-center w-10 h-10 border border-red-500 rounded-full"
+        >
+          {/* Resume Icon */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-5 h-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+            <line x1="16" y1="13" x2="8" y2="13" />
+            <line x1="16" y1="17" x2="8" y2="17" />
+            <polyline points="10 9 9 9 8 9" />
+          </svg>
+        </a>
+      </div>
     </nav>
   );
 }
