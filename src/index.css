@@ -1,26 +1,2 @@
 @import "tailwindcss";
 
-:root {
-    --brand-hsl-raw: 0 0% %;
-}
-
-@theme {
-    --color-background: hsl(0, 0%, 10%);
-    --color-text: hsl(0, 0%, 90%);
-    --color-card: hsl(0, 0%, 100%);
-}
-
-.debug {
-    border: 1px red solid;
-}
-
-@layer base {
-    body {
-        background-color: var(--color-background);
-        color: var(--color-text);
-    }
-
-    section {
-        @apply flex items-center flex-col h-dvh scroll-mt-19.5;
-    }
-}
