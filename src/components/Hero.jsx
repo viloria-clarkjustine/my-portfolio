@@ -21,6 +21,9 @@ export default function Hero() {
           <p className="text-xs sm:text-sm font-semibold tracking-widest uppercase leading-relaxed">
             SOFTWARE DEVELOPER
           </p>
+          <p className="text-[11px] sm:text-xs font-mono tracking-wider opacity-80 mt-0.5">
+            RIZAL, PHILIPPINES
+          </p>
           <div className="w-8 h-0.5 bg-red-500 mt-2" />
         </div>
 
