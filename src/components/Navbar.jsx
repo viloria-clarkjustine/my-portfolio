@@ -1,9 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logo from "../assets/pattern_square.png";
 
 export default function Navbar() {
   const [copied, setCopied] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const email = "viloria.clarkj@gmail.com";
+
+  useEffect(() => {
+    const heroElement = document.getElementById("home");
+    if (!heroElement) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Hide navbar whenever any part of hero section is visible
+        // Only show navbar once the view has completely scrolled beyond the hero section
+        setIsVisible(!entry.isIntersecting && entry.boundingClientRect.top < 0);
+      },
+      {
+        threshold: 0,
+      }
+    );
+
+    observer.observe(heroElement);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   const handleCopyEmail = async () => {
     try {
@@ -16,7 +39,13 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="flex items-center justify-center gap-3 border border-red-500 p-2">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-center gap-3 border border-red-500 p-2 bg-white/80 backdrop-blur-md transition-all duration-300 ${
+        isVisible
+          ? "opacity-100 translate-y-0 pointer-events-auto"
+          : "opacity-0 -translate-y-full pointer-events-none"
+      }`}
+    >
       {/* 1. Logo Container (Left) */}
       <div className="flex items-center justify-center border border-red-500 p-2 rounded-full">
         <a
