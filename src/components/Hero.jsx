@@ -19,7 +19,7 @@ export default function Hero() {
       <div className="flex items-start justify-between z-20">
         <div className="border border-red-500 p-3 rounded-lg max-w-xs sm:max-w-sm">
           <p className="text-xs sm:text-sm font-semibold tracking-widest uppercase leading-relaxed">
-            SOFTWARE DEVELOPER
+            JUNIOR FULL-STACK DEVELOPER
           </p>
           <p className="text-[11px] sm:text-xs font-mono tracking-wider opacity-80 mt-0.5">
             RIZAL, PHILIPPINES
