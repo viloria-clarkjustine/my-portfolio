@@ -1,70 +1,71 @@
 /**
  * Skills Data
  *
- * `icon` maps directly to standard icon component names from `react-icons`:
- * - Simple Icons (`react-icons/si`): e.g., SiReact, SiDocker, SiRoboflow, etc.
- * - FontAwesome / Tabler / Lucide (`react-icons/tb`, `react-icons/fa6`): for conceptual engineering skills
+ * Categorized technical domains based on actual skill set:
+ * - Mobile & Frontend
+ * - Backend & APIs
+ * - Databases & Database Tools
+ * - Desktop & Reporting
+ * - DevOps, Tools & Infrastructure
+ * - AI & Computer Vision
  */
 
 export const skillCategories = [
   {
-    title: "FRONTEND",
+    title: "MOBILE & FRONTEND",
     skills: [
-      { name: "React", icon: "SiReact" },
-      { name: "Next.js", icon: "SiNextdotjs" },
-      { name: "JavaScript", icon: "SiJavascript" },
+      { name: "React Native", icon: "SiReact" },
+      { name: "Expo", icon: "SiExpo" },
+      { name: "Flutter", icon: "SiFlutter" },
+      { name: "Riverpod", icon: "TbCircleDot" },
       { name: "TypeScript", icon: "SiTypescript" },
-      { name: "Tailwind CSS", icon: "SiTailwindcss" },
-      { name: "Redux", icon: "SiRedux" },
-      { name: "HTML5 / CSS3", icon: "SiHtml5" },
+      { name: "HTML / CSS / JS", icon: "SiJavascript" },
     ],
   },
   {
     title: "BACKEND & APIS",
     skills: [
-      { name: "Node.js", icon: "SiNodedotjs" },
-      { name: "Express.js", icon: "SiExpress" },
       { name: "Python", icon: "SiPython" },
+      { name: "FastAPI", icon: "SiFastapi" },
+      { name: "PHP", icon: "SiPhp" },
+      { name: "Supabase", icon: "SiSupabase" },
       { name: "REST APIs", icon: "TbApi" },
-      { name: "GraphQL", icon: "SiGraphql" },
     ],
   },
   {
-    title: "DATABASES",
+    title: "DATABASES & TOOLS",
     skills: [
-      { name: "PostgreSQL", icon: "SiPostgresql" },
-      { name: "MongoDB", icon: "SiMongodb" },
       { name: "MySQL", icon: "SiMysql" },
-      { name: "Prisma ORM", icon: "SiPrisma" },
-      { name: "Redis", icon: "SiRedis" },
+      { name: "SQL Server", icon: "SiMicrosoftsqlserver" },
+      { name: "HeidiSQL", icon: "TbDatabase" },
+      { name: "Supabase (PostgreSQL)", icon: "SiPostgresql" },
     ],
   },
   {
-    title: "AI & VISION",
+    title: "DESKTOP & REPORTING",
     skills: [
-      { name: "Roboflow", icon: "SiRoboflow" },
+      { name: "VB.NET", icon: "SiDotnet" },
+      { name: "XAML", icon: "TbLayoutDashboard" },
+      { name: "SAP Crystal Reports", icon: "TbFileReport" },
+    ],
+  },
+  {
+    title: "DEVOPS & WORKFLOW",
+    skills: [
+      { name: "Git / GitHub", icon: "SiGithub" },
+      { name: "Linux", icon: "SiLinux" },
+      { name: "Ngrok", icon: "SiNgrok" },
+      { name: "Jira", icon: "SiJira" },
+      { name: "Trello", icon: "SiTrello" },
+    ],
+  },
+  {
+    title: "AI & COMPUTER VISION",
+    skills: [
       { name: "OpenCV", icon: "SiOpencv" },
-      { name: "PyTorch", icon: "SiPytorch" },
-      { name: "TensorFlow", icon: "SiTensorflow" },
-    ],
-  },
-  {
-    title: "TOOLS & DEVOPS",
-    skills: [
-      { name: "Git", icon: "SiGit" },
-      { name: "GitHub", icon: "SiGithub" },
-      { name: "Docker", icon: "SiDocker" },
-      { name: "Linux / Bash", icon: "SiLinux" },
-      { name: "Vercel", icon: "SiVercel" },
-    ],
-  },
-  {
-    title: "TESTING & ARCHITECTURE",
-    skills: [
-      { name: "Jest", icon: "SiJest" },
-      { name: "Postman", icon: "SiPostman" },
-      { name: "System Design", icon: "TbHierarchy2" },
-      { name: "Clean Code", icon: "TbCodeCircle2" },
+      { name: "Roboflow", icon: "SiRoboflow" },
+      { name: "Dataset Annotation", icon: "TbTag" },
+      { name: "Model Training", icon: "TbBrain" },
     ],
   },
 ];
