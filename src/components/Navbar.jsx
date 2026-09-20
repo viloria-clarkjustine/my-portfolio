@@ -66,6 +66,29 @@ export default function Navbar() {
       <ul className="flex items-center gap-4 border border-red-500 p-2 rounded-full">
         <li>
           <a
+            href="#about"
+            aria-label="About Me"
+            title="About Me"
+            className="inline-flex items-center justify-center w-10 h-10 border border-red-500 rounded-full"
+          >
+            {/* About Me / User Profile Icon */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
             href="#skills"
             aria-label="Skills"
             title="Skills"
@@ -107,6 +130,28 @@ export default function Navbar() {
             >
               <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
               <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#projects"
+            aria-label="Projects"
+            title="Projects"
+            className="inline-flex items-center justify-center w-10 h-10 border border-red-500 rounded-full"
+          >
+            {/* Projects / Folder or Code Window Icon */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
             </svg>
           </a>
         </li>

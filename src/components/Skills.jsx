@@ -65,10 +65,7 @@ export default function Skills() {
       </div>
 
       {/* Bottom Wireframe Footer / Note */}
-      <div className="mt-8 flex items-center justify-between border border-red-500 p-3 rounded-lg text-xs font-mono">
-        <span>// CONTINUOUSLY EXPANDING TECH STACK</span>
-        <span>WIREFRAME V1</span>
-      </div>
+
     </section>
   );
 }

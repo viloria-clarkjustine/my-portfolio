@@ -3,8 +3,10 @@ import sittingImg from "../assets/sitting_transparent_bg.png";
 
 export default function Hero() {
   const ctaButtons = [
+    { label: "ABOUT ME", href: "#about" },
     { label: "SKILLS", href: "#skills" },
     { label: "EXPERIENCE", href: "#experience" },
+    { label: "PROJECTS", href: "#projects" },
     { label: "SOCIALS", href: "#socials" },
     { label: "RESUME", href: "#resume" },
   ];
@@ -63,7 +65,7 @@ export default function Hero() {
               key={btn.label}
               href={btn.href}
               className={`px-4 py-2 text-xs sm:text-sm font-semibold tracking-wider rounded-full border border-red-500 transition-colors ${
-                idx === 3
+                idx === 5
                   ? "bg-red-500 text-white hover:bg-transparent hover:text-inherit"
                   : "hover:bg-red-500 hover:text-white"
               }`}
